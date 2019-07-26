@@ -1,0 +1,58 @@
+/* ------------------ FLEXBOX --------------
+ 
+Flexbox Notes:
+- Main Axis: default Left > Right
+- Cross Axis: default Up > Down
+- Axis are perpendicular | switching rows to columns switches the axis
+ 
+Notes:
+- first property is default 
+ 
+*/
+ 
+ 
+.flexbox-container {
+    /* ENABLER */
+    display: flex; /* or inline-flex */
+ 
+    /* ORDERING/ORIENTATION - Establishes the main axis */
+    flex-direction: row | row-reverse | column | column-reverse;
+     
+    /* ORDERING/ORIENTATION - Wraps items if they can't all be made to fit on one line */
+    flex-wrap: nowrap | wrap | wrap-reverse;
+ 
+    /* ORDERING/ORIENTATION - Shorthand for flex-direction and flex-wrap */
+    flex-flow: row nowrap | <‘flex-direction’> || <‘flex-wrap’>;
+ 
+    /* ALIGNMENT - Attempts to distribute extra space on the main axis */
+    justify-content: flex-start | flex-end | center | space-between | space-around | space-evenly;
+     
+    /* ALIGNMENT - Determines how items are laid out on the cross axis */
+    align-items: stretch | flex-start | flex-end | center | baseline;
+     
+    /* ALIGNMENT - Only has an effect with more than one line of content. Examples shown here use flex-wrap */
+    align-content: flex-start | flex-end | center | space-between | space-around | stretch; 
+}
+ 
+ 
+.flexbox-container .item {
+     
+    /* ORDERING/ORIENTATION - Allows you to explictly set the order you want each child to appear in */
+    order: <integer>; /* default is 0 */
+     
+    /* FLEXIBILITY - Allows you to determine how each child is allowed to grow as a part of a whole */
+    flex-grow: <number>; /* default 0 */
+     
+    /* FLEXIBILITY - Allows an item to shrink if necessary. Only really useful with a set size or flex-basis */
+    flex-shrink: <number>; /* default 1 */
+     
+    /* FLEXIBILITY - Defines the size of an element before remaining space is distributed */
+    flex-basis: <length> | auto; /* default auto */
+     
+    /* FLEXIBILITY - Shorthand for flex-grow, flex-shrink and flex-basis */
+    flex: none | [ <'flex-grow'> <'flex-shrink'>? || <'flex-basis'> ];
+     
+    /* ALIGNMENT - Sets alignment for individual item. See "align-items" for options */
+    align-self: auto | flex-start | flex-end | center | baseline | stretch;
+     
+}
